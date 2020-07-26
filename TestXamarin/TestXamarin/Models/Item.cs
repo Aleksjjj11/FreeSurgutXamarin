@@ -3,7 +3,7 @@ using Xamarin.Forms;
 
 namespace TestXamarin.Models
 {
-    public class Item
+    public class Item : IItem
     {
         public string Id { get; set; }
         public string Text { get; set; }
