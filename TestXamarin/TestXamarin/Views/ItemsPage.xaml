@@ -5,6 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="TestXamarin.Views.ItemsPage"
+             xmlns:image="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
              Title="{Binding Title}"
              x:Name="BrowseItemsPage">
 
@@ -21,17 +22,33 @@
             </d:CollectionView.ItemsSource>
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <StackLayout Padding="10">
-                        <Label Text="{Binding Text}" 
+                    <StackLayout Padding="10" Orientation="Horizontal">
+                        <image:CircleImage Grid.Row="0" Grid.Column="0" 
+                                   Source="{Binding ReportImages[0].Source}" HorizontalOptions="Start"
+                                   Aspect="AspectFit" HeightRequest="80" WidthRequest="80">
+                        </image:CircleImage>
+                        <StackLayout Orientation="Vertical">
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding NumberCar}" 
                                 d:Text="{Binding .}"
                                 LineBreakMode="NoWrap" 
                                 Style="{DynamicResource ListItemTextStyle}" 
-                                FontSize="16" />
-                        <Label Text="{Binding Description}" 
-                                d:Text="Item descripton"
-                                LineBreakMode="NoWrap"
-                                Style="{DynamicResource ListItemDetailTextStyle}"
-                                FontSize="13" />
+                                FontSize="Subtitle"  TextColor="Black"/>
+                                <Label Text="|" FontSize="Subtitle" TextColor="Black"></Label>
+                                <StackLayout Orientation="Vertical">
+                                    <Label Text="{Binding RegionCar}"
+                                           FontSize="Subtitle"
+                                           TextColor="Black"></Label>
+                                    <Label Text="{Binding Country}"
+                                           FontSize="Small"
+                                           TextColor="Black"></Label>
+                                </StackLayout>
+                            </StackLayout>
+                            <Label Text="{Binding Status.ToString()}"
+                                   FontSize="Subtitle"
+                                   TextColor="Red"></Label>
+                            
+                        </StackLayout>
                         <StackLayout.GestureRecognizers>
                             <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="OnItemSelected"></TapGestureRecognizer>
                         </StackLayout.GestureRecognizers>
