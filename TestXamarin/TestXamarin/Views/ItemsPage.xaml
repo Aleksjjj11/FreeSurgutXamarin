@@ -10,47 +10,61 @@
              x:Name="BrowseItemsPage">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add" Clicked="AddItem_Clicked" />
+        
     </ContentPage.ToolbarItems>
-
-    <RefreshView IsRefreshing="{Binding IsBusy, Mode=TwoWay}" Command="{Binding LoadItemsCommand}">
-        <CollectionView x:Name="ItemsCollectionView"
+    
+    <RefreshView 
+            IsRefreshing="{Binding IsBusy, Mode=TwoWay}" Command="{Binding LoadItemsCommand}">
+        <CollectionView 
+                x:Name="ItemsCollectionView"
                 ItemsSource="{Binding Items}">
             <d:CollectionView.ItemsSource>
-                <x:Array Type="{x:Type x:String}">
+                <x:Array 
+                    Type="{x:Type x:String}">
                 </x:Array>
             </d:CollectionView.ItemsSource>
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <StackLayout Padding="10" Orientation="Horizontal">
-                        <image:CircleImage Grid.Row="0" Grid.Column="0" 
+                    <StackLayout 
+                            Orientation="Horizontal">
+                        <image:CircleImage 
                                    Source="{Binding ReportImages[0].Source}" HorizontalOptions="Start"
                                    Aspect="AspectFit" HeightRequest="80" WidthRequest="80">
                         </image:CircleImage>
                         <StackLayout Orientation="Vertical">
                             <StackLayout Orientation="Horizontal">
-                                <Label Text="{Binding NumberCar}" 
-                                d:Text="{Binding .}"
-                                LineBreakMode="NoWrap" 
-                                Style="{DynamicResource ListItemTextStyle}" 
-                                FontSize="Subtitle"  TextColor="Black"/>
-                                <Label Text="|" FontSize="Subtitle" TextColor="Black"></Label>
-                                <StackLayout Orientation="Vertical">
-                                    <Label Text="{Binding RegionCar}"
-                                           FontSize="Subtitle"
+                                <Label 
+                                    Text="{Binding NumberCar}" d:Text="{Binding .}" VerticalOptions="Center"
+                                    LineBreakMode="NoWrap" FontFamily="Comfortaa-Regular.ttf#Comfortaa"
+                                    FontSize="Title"  TextColor="Black"></Label>
+                                <Image 
+                                    Source="Line_1.png" HeightRequest="70" Aspect="AspectFit"></Image>
+                                <StackLayout 
+                                    Orientation="Vertical" VerticalOptions="Center" Spacing="0">
+                                    <Label 
+                                        VerticalOptions="Center" Text="{Binding RegionCar}" HorizontalOptions="Center"
+                                        FontSize="Title" FontFamily="Comfortaa-Regular.ttf#Comfortaa" VerticalTextAlignment="End"
+                                        TextColor="Black"></Label>
+                                    <StackLayout 
+                                        Orientation="Horizontal" Spacing="2">
+                                        <Image 
+                                            Source="russia.png" WidthRequest="35" Aspect="AspectFit"></Image>
+                                        <Label
+                                           Text="{Binding Country}" VerticalOptions="Center"
+                                           FontSize="Small" FontFamily="Comfortaa-Regular.ttf#Comfortaa"
                                            TextColor="Black"></Label>
-                                    <Label Text="{Binding Country}"
-                                           FontSize="Small"
-                                           TextColor="Black"></Label>
+                                    </StackLayout>
                                 </StackLayout>
                             </StackLayout>
-                            <Label Text="{Binding Status.ToString()}"
-                                   FontSize="Subtitle"
-                                   TextColor="Red"></Label>
                             
+                            <Label 
+                                Text="{Binding StringStatus}" FontFamily="Comfortaa-Regular.ttf#Comfortaa"
+                                FontSize="Subtitle"
+                                TextColor="{Binding ColorStatus}}"></Label>
                         </StackLayout>
                         <StackLayout.GestureRecognizers>
-                            <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="OnItemSelected"></TapGestureRecognizer>
+                            <TapGestureRecognizer 
+                                    NumberOfTapsRequired="1" Tapped="OnItemSelected"></TapGestureRecognizer>
                         </StackLayout.GestureRecognizers>
                     </StackLayout>
                 </DataTemplate>

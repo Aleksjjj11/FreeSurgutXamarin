@@ -19,5 +19,30 @@ namespace TestXamarin.Models
         public string NumberCar { get; set; }
         public string Country { get; set; }
         public int RegionCar { get; set; }
+        public Color ColorStatus 
+        { 
+            get { 
+                switch (Status)
+                {
+                    case ReportStatus.Accepted: return Color.FromHex("#228B22");
+                    case ReportStatus.Declined: return Color.FromHex("#B22222");
+                    case ReportStatus.Processing: return Color.FromHex("#008B8B");
+                    default: return Color.Black;
+                }
+            }   
+        }
+        public string StringStatus
+        {
+            get
+            {
+                switch (Status)
+                {
+                    case ReportStatus.Accepted: return "Принято";
+                    case ReportStatus.Declined: return "Отклонено";
+                    case ReportStatus.Processing: return "Обрабатывается";
+                    default: return null;
+                }
+            }
+        }
     }
 }
