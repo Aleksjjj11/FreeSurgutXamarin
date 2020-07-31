@@ -18,7 +18,7 @@
 
         <NavigationPage Title="Сделать фото" BarTextColor="AliceBlue" IconImageSource="twotone_camera_black_48dp.png">
             <x:Arguments>
-                <views:AboutPage />
+                <views:NewReportPage />
             </x:Arguments>
         </NavigationPage>
         
