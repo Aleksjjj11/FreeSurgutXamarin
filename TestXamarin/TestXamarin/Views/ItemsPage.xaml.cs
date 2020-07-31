@@ -30,8 +30,8 @@ namespace TestXamarin.Views
         async void OnItemSelected(object sender, EventArgs args)
         {
             var layout = (BindableObject)sender;
-            var item = (Item)layout.BindingContext;
-            await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(item)));
+            var item = (Report)layout.BindingContext;
+            await Navigation.PushAsync(new ReportPage(new ReportDetailViewModel(item)));
         }
 
         async void AddItem_Clicked(object sender, EventArgs e)

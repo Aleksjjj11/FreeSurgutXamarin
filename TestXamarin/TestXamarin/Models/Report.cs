@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
 using Xamarin.Forms;
 
@@ -19,6 +20,21 @@ namespace TestXamarin.Models
         public string NumberCar { get; set; }
         public string Country { get; set; }
         public int RegionCar { get; set; }
+        public DateTime CreatedDate { get; private set; }
+        public string Date
+        {
+            get
+            {
+                return $"{CreatedDate.Day}.{CreatedDate.Month}.{CreatedDate.Year}";
+            }
+        }
+        public string Time
+        {
+            get
+            {
+                return CreatedDate.ToString("t", new CultureInfo("hr-HR"));
+            }
+        }
         public Color ColorStatus 
         { 
             get { 
@@ -43,6 +59,10 @@ namespace TestXamarin.Models
                     default: return null;
                 }
             }
+        }
+        public Report()
+        {
+            CreatedDate = DateTime.Now;
         }
     }
 }

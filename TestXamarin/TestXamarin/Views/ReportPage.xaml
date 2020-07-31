@@ -5,12 +5,79 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="TestXamarin.Views.ReportPage"
-             Title="Редактирование">
+             xmlns:vm="clr-namespace:TestXamarin.ViewModels"
+             Title="{Binding Title}">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="That's Full Info Report Page!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView >
+            <FlexLayout 
+                Direction="Column" Margin="15, 15, 15, 0">
+                <Label 
+                    Text="Номер автомобиля:" 
+                    FontFamily="Comfortaa-Regular.ttf#Comfortaa"
+                    FontSize="Subtitle">
+                </Label>
+                <StackLayout Orientation="Vertical" HorizontalOptions="Center">
+                    <StackLayout Orientation="Horizontal">
+                        <Label 
+                        Text="{Binding Item.NumberCar}" d:Text="{Binding .}" VerticalOptions="Center"
+                        LineBreakMode="NoWrap" FontFamily="Comfortaa-Regular.ttf#Comfortaa"
+                        FontSize="Title"  TextColor="Black"></Label>
+                        <Image 
+                        Source="Line_1.png" HeightRequest="70" Aspect="AspectFit"></Image>
+                        <StackLayout 
+                        Orientation="Vertical" Spacing="0">
+                            <Label 
+                            VerticalOptions="Center" Text="{Binding Item.RegionCar}" HorizontalOptions="Center" Padding="0, 10, 0, 0"
+                            FontSize="Title" FontFamily="Comfortaa-Regular.ttf#Comfortaa" VerticalTextAlignment="End"
+                            TextColor="Black"></Label>
+                            <StackLayout 
+                            Orientation="Horizontal" Spacing="2">
+                                <Image 
+                                Source="russia.png" WidthRequest="35" Aspect="AspectFit"></Image>
+                                <Label
+                                Text="{Binding Item.Country}" VerticalOptions="Center"
+                                FontSize="Small" FontFamily="Comfortaa-Regular.ttf#Comfortaa"
+                                TextColor="Black"></Label>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+                <Label 
+                    Text="Снимки" Margin="0, 0, 0, 10"
+                    FontFamily="Comfortaa-Regular.ttf#Comfortaa"
+                    FontSize="Subtitle"/>
+                <CollectionView
+                    x:Name="ReportsImages" HeightRequest="600"
+                    ItemsSource="{Binding Item.ReportImages}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Image
+                                Source="{Binding Source}" HorizontalOptions="Center" Margin="5, 15, 5, 10">
+                            </Image>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                <StackLayout Orientation="Horizontal">
+                    <Label 
+                    Text="Статус жалобы:"
+                    FontFamily="Comfortaa-Regular.ttf#Comfortaa"
+                    FontSize="Subtitle"></Label>
+                    <Label 
+                        Text="{Binding Item.StringStatus}" FontFamily="Comfortaa-Regular.ttf#Comfortaa"
+                        FontSize="Subtitle" Padding="0, 0, 0, 15"
+                        TextColor="{Binding Item.ColorStatus}"></Label>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label 
+                    Text="Дата отправки:"
+                    FontFamily="Comfortaa-Regular.ttf#Comfortaa"
+                    FontSize="Subtitle"></Label>
+                    <Label 
+                        Text="{Binding Item.Date}" FontFamily="Comfortaa-Regular.ttf#Comfortaa"
+                        FontSize="Subtitle" Padding="0, 0, 0, 15"
+                        TextColor="Black"></Label>
+                </StackLayout>
+            </FlexLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

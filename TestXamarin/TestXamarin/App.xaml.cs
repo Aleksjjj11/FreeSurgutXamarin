@@ -23,7 +23,7 @@ namespace TestXamarin
             {
                 Id = Guid.NewGuid().ToString(),
                 Reports = new List<Report>() { new Report { Status = Report.ReportStatus.Accepted, NumberCar = "A436УВ", Country = "RUS", RegionCar = 777, ReportImages = new List<Image> { new Image { Source = "car2.png" } } },
-                new Report { Status = Report.ReportStatus.Declined, NumberCar = "В325АН", Country = "RUS", RegionCar = 94, ReportImages = new List<Image> { new Image { Source = "car2.png" } } } }
+                new Report { Status = Report.ReportStatus.Declined, NumberCar = "В325АН", Country = "RUS", RegionCar = 94, ReportImages = new List<Image> { new Image { Source = "auto_04.jpg" }, new Image { Source = "auto_04.jpg" }, new Image { Source = "auto_04.jpg" } } } }
             };
             //Сделать нормальные констуркторы, даун(для кода сверху)
             DependencyService.Register<MockDataStore>();

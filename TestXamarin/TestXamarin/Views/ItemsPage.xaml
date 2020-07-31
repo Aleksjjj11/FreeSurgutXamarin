@@ -26,10 +26,11 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <StackLayout 
+                            Padding="15, 10, 15, 0"
                             Orientation="Horizontal">
                         <image:CircleImage 
                                    Source="{Binding ReportImages[0].Source}" HorizontalOptions="Start"
-                                   Aspect="AspectFit" HeightRequest="80" WidthRequest="80">
+                                   Aspect="AspectFill" HeightRequest="80" WidthRequest="80">
                         </image:CircleImage>
                         <StackLayout Orientation="Vertical">
                             <StackLayout Orientation="Horizontal">
@@ -40,9 +41,9 @@
                                 <Image 
                                     Source="Line_1.png" HeightRequest="70" Aspect="AspectFit"></Image>
                                 <StackLayout 
-                                    Orientation="Vertical" VerticalOptions="Center" Spacing="0">
+                                    Orientation="Vertical" Spacing="0">
                                     <Label 
-                                        VerticalOptions="Center" Text="{Binding RegionCar}" HorizontalOptions="Center"
+                                        VerticalOptions="Center" Text="{Binding RegionCar}" HorizontalOptions="Center" Padding="0, 10, 0, 0"
                                         FontSize="Title" FontFamily="Comfortaa-Regular.ttf#Comfortaa" VerticalTextAlignment="End"
                                         TextColor="Black"></Label>
                                     <StackLayout 
@@ -59,8 +60,20 @@
                             
                             <Label 
                                 Text="{Binding StringStatus}" FontFamily="Comfortaa-Regular.ttf#Comfortaa"
-                                FontSize="Subtitle"
-                                TextColor="{Binding ColorStatus}}"></Label>
+                                FontSize="Subtitle" Padding="0, 0, 0, 15"
+                                TextColor="{Binding ColorStatus}"></Label>
+                        </StackLayout>
+                        <StackLayout
+                            Orientation="Vertical" HorizontalOptions="End" 
+                            VerticalOptions="End" Padding="0, 0, 0, 15" Spacing="2">
+                            <Label
+                                Text="{Binding Time}" FontSize="Small" HorizontalTextAlignment="End"
+                                FontFamily="Comfortaa-Regular.ttf#Comfortaa"
+                                TextColor="Black"></Label>
+                            <Label
+                                Text="{Binding Date}" FontSize="Small" HorizontalTextAlignment="End"
+                                FontFamily="Comfortaa-Regular.ttf#Comfortaa"
+                                TextColor="Black"></Label>
                         </StackLayout>
                         <StackLayout.GestureRecognizers>
                             <TapGestureRecognizer 
