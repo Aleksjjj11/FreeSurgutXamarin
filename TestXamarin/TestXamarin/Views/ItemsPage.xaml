@@ -8,11 +8,6 @@
              xmlns:image="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
              Title="{Binding Title}"
              x:Name="BrowseItemsPage">
-
-    <ContentPage.ToolbarItems>
-        
-    </ContentPage.ToolbarItems>
-    
     <RefreshView 
             IsRefreshing="{Binding IsBusy, Mode=TwoWay}" Command="{Binding LoadItemsCommand}">
         <CollectionView 
@@ -25,60 +20,65 @@
             </d:CollectionView.ItemsSource>
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <StackLayout 
-                            Padding="15, 10, 15, 0"
-                            Orientation="Horizontal">
-                        <image:CircleImage 
+                    <StackLayout
+                        Orientation="Vertical">
+                        <StackLayout 
+                            Padding="15, 10, 5, 0"
+                            Orientation="Horizontal"
+                            Spacing="25">
+                            <image:CircleImage 
                                    Source="{Binding ReportImages[0].Source}" HorizontalOptions="Start"
                                    Aspect="AspectFill" HeightRequest="80" WidthRequest="80">
-                        </image:CircleImage>
-                        <StackLayout Orientation="Vertical">
-                            <StackLayout Orientation="Horizontal">
-                                <Label 
-                                    Text="{Binding NumberCar}" d:Text="{Binding .}" VerticalOptions="Center"
-                                    LineBreakMode="NoWrap" FontFamily="Comfortaa-Regular.ttf#Comfortaa"
-                                    FontSize="Title"  TextColor="Black"></Label>
-                                <Image 
-                                    Source="Line_1.png" HeightRequest="70" Aspect="AspectFit"></Image>
-                                <StackLayout 
-                                    Orientation="Vertical" Spacing="0">
-                                    <Label 
-                                        VerticalOptions="Center" Text="{Binding RegionCar}" HorizontalOptions="Center" Padding="0, 10, 0, 0"
-                                        FontSize="Title" FontFamily="Comfortaa-Regular.ttf#Comfortaa" VerticalTextAlignment="End"
-                                        TextColor="Black"></Label>
-                                    <StackLayout 
-                                        Orientation="Horizontal" Spacing="2">
-                                        <Image 
-                                            Source="russia.png" WidthRequest="35" Aspect="AspectFit"></Image>
-                                        <Label
-                                           Text="{Binding Country}" VerticalOptions="Center"
-                                           FontSize="Small" FontFamily="Comfortaa-Regular.ttf#Comfortaa"
-                                           TextColor="Black"></Label>
+                            </image:CircleImage>
+                            <StackLayout Orientation="Vertical">
+                                <StackLayout Orientation="Vertical" HorizontalOptions="Center">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label 
+                                        Text="{Binding NumberCar}" d:Text="{Binding .}" VerticalOptions="Center"
+                                        LineBreakMode="NoWrap" FontFamily="Comfortaa-Regular.ttf#Comfortaa"
+                                        FontSize="Title"  TextColor="Black"></Label>
+                                        <BoxView 
+                                        VerticalOptions="Fill" BackgroundColor="Black" WidthRequest="2"
+                                        Opacity=".5" Margin="0, 5, 0, 5"></BoxView>
+                                        <StackLayout 
+                                        Orientation="Vertical" Spacing="0">
+                                            <Label 
+                                            VerticalOptions="Center" Text="{Binding RegionCar}" HorizontalOptions="Center" Padding="0, 10, 0, 0"
+                                            FontSize="Subtitle" FontFamily="Comfortaa-Regular.ttf#Comfortaa" VerticalTextAlignment="End"
+                                            TextColor="Black" FontAttributes="Bold"></Label>
+                                            <Label
+                                            Text="{Binding Country}" VerticalOptions="Center"
+                                            FontSize="Subtitle" FontFamily="Comfortaa-Regular.ttf#Comfortaa"
+                                            TextColor="Black" FontAttributes="Bold"></Label>
+                                        </StackLayout>
                                     </StackLayout>
                                 </StackLayout>
-                            </StackLayout>
-                            
-                            <Label 
+
+                                <Label 
                                 Text="{Binding StringStatus}" FontFamily="Comfortaa-Regular.ttf#Comfortaa"
                                 FontSize="Subtitle" Padding="0, 0, 0, 15"
                                 TextColor="{Binding ColorStatus}"></Label>
-                        </StackLayout>
-                        <StackLayout
+                            </StackLayout>
+                            <StackLayout
                             Orientation="Vertical" HorizontalOptions="End" 
                             VerticalOptions="End" Padding="0, 0, 0, 15" Spacing="2">
-                            <Label
+                                <Label
                                 Text="{Binding Time}" FontSize="Small" HorizontalTextAlignment="End"
                                 FontFamily="Comfortaa-Regular.ttf#Comfortaa"
                                 TextColor="Black"></Label>
-                            <Label
+                                <Label
                                 Text="{Binding Date}" FontSize="Small" HorizontalTextAlignment="End"
                                 FontFamily="Comfortaa-Regular.ttf#Comfortaa"
                                 TextColor="Black"></Label>
-                        </StackLayout>
-                        <StackLayout.GestureRecognizers>
-                            <TapGestureRecognizer 
+                            </StackLayout>
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer 
                                     NumberOfTapsRequired="1" Tapped="OnItemSelected"></TapGestureRecognizer>
-                        </StackLayout.GestureRecognizers>
+                            </StackLayout.GestureRecognizers>
+                        </StackLayout>
+                        <BoxView 
+                            BackgroundColor="Black" HeightRequest="1"
+                            Opacity=".1" HorizontalOptions="Fill"></BoxView>
                     </StackLayout>
                 </DataTemplate>
             </CollectionView.ItemTemplate>

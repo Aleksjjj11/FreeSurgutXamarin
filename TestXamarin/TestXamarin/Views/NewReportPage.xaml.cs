@@ -18,6 +18,6 @@ namespace TestXamarin.Views
             InitializeComponent();
             BindingContext = viewModel = new NewReportViewModel();
         }
-
+      
     }
 }

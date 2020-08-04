@@ -9,6 +9,32 @@
              xmlns:vm="clr-namespace:TestXamarin.ViewModels">
     <ContentPage.Content>
         <StackLayout>
+            <StackLayout Orientation="Vertical" HorizontalOptions="Center">
+                <StackLayout Orientation="Horizontal">
+                    <Label 
+                        Text="{Binding Report.NumberCar}" d:Text="{Binding .}" VerticalOptions="Center"
+                        LineBreakMode="NoWrap" FontFamily="Comfortaa-Regular.ttf#Comfortaa"
+                        FontSize="Title"  TextColor="Black"></Label>
+                    <Image 
+                        Source="Line_1.png" HeightRequest="70" Aspect="AspectFit"></Image>
+                    <StackLayout 
+                        Orientation="Vertical" Spacing="0">
+                        <Label 
+                            VerticalOptions="Center" Text="{Binding Report.RegionCar}" HorizontalOptions="Center" Padding="0, 10, 0, 0"
+                            FontSize="Title" FontFamily="Comfortaa-Regular.ttf#Comfortaa" VerticalTextAlignment="End"
+                            TextColor="Black"></Label>
+                        <StackLayout 
+                            Orientation="Horizontal" Spacing="2">
+                            <Image 
+                                Source="russia.png" WidthRequest="35" Aspect="AspectFit"></Image>
+                            <Label
+                                Text="{Binding Report.Country}" VerticalOptions="Center"
+                                FontSize="Small" FontFamily="Comfortaa-Regular.ttf#Comfortaa"
+                                TextColor="Black"></Label>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
             <Label Text="Welcome to NewReportPage!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />

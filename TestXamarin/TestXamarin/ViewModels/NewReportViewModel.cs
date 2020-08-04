@@ -8,11 +8,11 @@ namespace TestXamarin.ViewModels
 {
     public class NewReportViewModel : BaseViewModel
     {
-        public Report report;
+        public Report Report;
         public NewReportViewModel()
         {
             Title = "Новая жалоба";
-            report = new Report();
+            Report = Report ?? new Report();
         }
     }
 }

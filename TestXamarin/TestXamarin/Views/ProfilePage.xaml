@@ -12,7 +12,7 @@
         <vm:ProfileViewModel />
     </ContentPage.BindingContext>
     <ContentPage.ToolbarItems>
-        <ToolbarItem Clicked="Setting_Clicked"  IconImageSource="settings_btn_white.png"/>
+        <ToolbarItem Clicked="Setting_Clicked"  IconImageSource="settings_btn.png"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>

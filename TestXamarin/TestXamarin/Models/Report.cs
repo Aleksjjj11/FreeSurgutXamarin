@@ -20,6 +20,17 @@ namespace TestXamarin.Models
         public string NumberCar { get; set; }
         public string Country { get; set; }
         public int RegionCar { get; set; }
+        public string CountryImage
+        {
+            get
+            {
+                switch (Country.ToUpper())
+                {
+                    case "RUS": return "russia.png";
+                    default: return "russia.png";
+                }
+            }
+        }
         public DateTime CreatedDate { get; private set; }
         public string Date
         {

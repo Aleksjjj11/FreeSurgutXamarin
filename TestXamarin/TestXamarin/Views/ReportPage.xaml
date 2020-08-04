@@ -19,26 +19,22 @@
                 <StackLayout Orientation="Vertical" HorizontalOptions="Center">
                     <StackLayout Orientation="Horizontal">
                         <Label 
-                        Text="{Binding Item.NumberCar}" d:Text="{Binding .}" VerticalOptions="Center"
-                        LineBreakMode="NoWrap" FontFamily="Comfortaa-Regular.ttf#Comfortaa"
-                        FontSize="Title"  TextColor="Black"></Label>
-                        <Image 
-                        Source="Line_1.png" HeightRequest="70" Aspect="AspectFit"></Image>
+                            Text="{Binding Item.NumberCar}" d:Text="{Binding .}" VerticalOptions="Center"
+                            LineBreakMode="NoWrap" FontFamily="Comfortaa-Regular.ttf#Comfortaa"
+                            FontSize="Title"  TextColor="Black"></Label>
+                        <BoxView 
+                            VerticalOptions="Fill" BackgroundColor="Black" WidthRequest="2"
+                            Opacity=".5" Margin="0, 5, 0, 5"></BoxView>
                         <StackLayout 
-                        Orientation="Vertical" Spacing="0">
+                            Orientation="Vertical" Spacing="0">
                             <Label 
                             VerticalOptions="Center" Text="{Binding Item.RegionCar}" HorizontalOptions="Center" Padding="0, 10, 0, 0"
-                            FontSize="Title" FontFamily="Comfortaa-Regular.ttf#Comfortaa" VerticalTextAlignment="End"
-                            TextColor="Black"></Label>
-                            <StackLayout 
-                            Orientation="Horizontal" Spacing="2">
-                                <Image 
-                                Source="russia.png" WidthRequest="35" Aspect="AspectFit"></Image>
-                                <Label
+                            FontSize="Subtitle" FontFamily="Comfortaa-Regular.ttf#Comfortaa" VerticalTextAlignment="End"
+                            TextColor="Black" FontAttributes="Bold"></Label>
+                            <Label
                                 Text="{Binding Item.Country}" VerticalOptions="Center"
-                                FontSize="Small" FontFamily="Comfortaa-Regular.ttf#Comfortaa"
-                                TextColor="Black"></Label>
-                            </StackLayout>
+                                FontSize="Subtitle" FontFamily="Comfortaa-Regular.ttf#Comfortaa"
+                                TextColor="Black" FontAttributes="Bold"></Label>
                         </StackLayout>
                     </StackLayout>
                 </StackLayout>

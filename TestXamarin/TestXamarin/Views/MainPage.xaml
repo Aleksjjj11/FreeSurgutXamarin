@@ -10,19 +10,19 @@
             android:TabbedPage.ToolbarPlacement="Bottom">
 
     <TabbedPage.Children>
-        <NavigationPage Title="Журнал" BarTextColor="AliceBlue" IconImageSource="baseline_home_black_24dp.png">
+        <NavigationPage Title="Журнал" BarTextColor="Black" IconImageSource="baseline_home_black_24dp.png">
             <x:Arguments>
                 <views:ItemsPage />
             </x:Arguments>
         </NavigationPage>
 
-        <NavigationPage Title="Сделать фото" BarTextColor="AliceBlue" IconImageSource="twotone_camera_black_48dp.png">
+        <NavigationPage Title="Сделать фото" BarTextColor="Black" IconImageSource="twotone_camera_black_48dp.png">
             <x:Arguments>
                 <views:NewReportPage />
             </x:Arguments>
         </NavigationPage>
         
-        <NavigationPage Title="Профиль" BarTextColor="AliceBlue" IconImageSource="baseline_account_box_black_24dp.png">
+        <NavigationPage Title="Профиль" BarTextColor="Black" IconImageSource="baseline_account_box_black_24dp.png">
             <x:Arguments>
                 <views:ProfilePage/>
             </x:Arguments>
