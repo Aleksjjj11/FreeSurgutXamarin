@@ -13,21 +13,9 @@ namespace TestXamarin.ViewModels
 {
     class ProfileViewModel : BaseViewModel
     {
-        public ObservableCollection<Item> Items { get; set; }
+        //public ObservableCollection<Item> Items { get; set; }
         public Command LoadItemsCommand { get; set; }
         public User TheUser { get; set; }
-        public int CountAccepted 
-        { 
-            get => TheUser.Reports.Where(rep => rep.Status == Report.ReportStatus.Accepted).Count();  
-        }
-        public int CountDeclined
-        {
-            get => TheUser.Reports.Where(rep => rep.Status == Report.ReportStatus.Declined).Count();
-        }
-        public int CountProcessing
-        {
-            get => TheUser.Reports.Where(rep => rep.Status == Report.ReportStatus.Processing).Count();
-        }
 
         public ProfileViewModel()
         {
@@ -55,12 +43,13 @@ namespace TestXamarin.ViewModels
 
             try
             {
-                Items.Clear();
-                var items = await DataStore.GetItemsAsync(true);
-                foreach (var item in items)
-                {
-                    Items.Add(item);
-                }
+                //Items.Clear();
+                //var items = await DataStore.GetItemsAsync(true);
+                TheUser = (App.Current as App).TheUser;
+                //foreach (var item in items)
+                //{
+                //    Items.Add(item);
+                //}
             }
             catch (Exception ex)
             {

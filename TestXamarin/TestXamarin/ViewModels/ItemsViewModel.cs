@@ -36,7 +36,7 @@ namespace TestXamarin.ViewModels
             try
             {
                 Items.Clear();
-                var items = await DataStore.GetItemsAsync(true);
+                var items = (App.Current as App).TheUser.Reports;
                 foreach (var item in items)
                 {
                     Items.Add((Report)item);

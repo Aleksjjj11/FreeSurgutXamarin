@@ -8,7 +8,7 @@ namespace TestXamarin.ViewModels
 {
     public class NewReportViewModel : BaseViewModel
     {
-        public Report Report;
+        public Report Report { get; set; }
         public NewReportViewModel()
         {
             Title = "Новая жалоба";

@@ -1,7 +1,5 @@
-﻿using System;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace TestXamarin.Views
 {
@@ -10,6 +8,8 @@ namespace TestXamarin.Views
     [DesignTimeVisible(false)]
     public partial class MainPage : TabbedPage
     {
+        Button takePhoto;
+
         public MainPage()
         {
             InitializeComponent();

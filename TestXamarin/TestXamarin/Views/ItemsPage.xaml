@@ -9,7 +9,8 @@
              Title="{Binding Title}"
              x:Name="BrowseItemsPage">
     <RefreshView 
-            IsRefreshing="{Binding IsBusy, Mode=TwoWay}" Command="{Binding LoadItemsCommand}">
+            IsRefreshing="{Binding IsBusy, Mode=TwoWay}" Command="{Binding LoadItemsCommand}" 
+            BackgroundColor="GhostWhite">
         <CollectionView 
                 x:Name="ItemsCollectionView"
                 ItemsSource="{Binding Items}">
@@ -21,7 +22,7 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <StackLayout
-                        Orientation="Vertical">
+                        Orientation="Vertical" BackgroundColor="White">
                         <StackLayout 
                             Padding="15, 10, 5, 0"
                             Orientation="Horizontal"

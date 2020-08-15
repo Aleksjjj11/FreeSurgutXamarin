@@ -23,7 +23,10 @@ namespace TestXamarin.Views
         public ItemsPage()
         {
             InitializeComponent();
-
+            LayoutChanged += (o, e) =>
+            {
+                UpdateChildrenLayout();
+            };
             BindingContext = viewModel = new ItemsViewModel();
         }
 
@@ -41,5 +44,6 @@ namespace TestXamarin.Views
             if (viewModel.Items.Count == 0)
                 viewModel.IsBusy = true;
         }
+
     }
 }

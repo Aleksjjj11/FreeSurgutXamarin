@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Globalization;
 using System.Text;
 using Xamarin.Forms;
@@ -14,12 +15,12 @@ namespace TestXamarin.Models
             Declined,
             Processing
         }
-        public List<Image> ReportImages { get; set; }
+        public ObservableCollection<Image> ReportImages { get; set; }
         public User Owner { get; }
         public ReportStatus Status { get; set; }
         public string NumberCar { get; set; }
         public string Country { get; set; }
-        public int RegionCar { get; set; }
+        public string RegionCar { get; set; }
         public string CountryImage
         {
             get
@@ -66,7 +67,7 @@ namespace TestXamarin.Models
                 {
                     case ReportStatus.Accepted: return "Принято";
                     case ReportStatus.Declined: return "Отклонено";
-                    case ReportStatus.Processing: return "Обрабатывается";
+                    case ReportStatus.Processing: return "В обработке";
                     default: return null;
                 }
             }
@@ -74,6 +75,7 @@ namespace TestXamarin.Models
         public Report()
         {
             CreatedDate = DateTime.Now;
+            ReportImages = ReportImages ?? new ObservableCollection<Image>();
         }
     }
 }

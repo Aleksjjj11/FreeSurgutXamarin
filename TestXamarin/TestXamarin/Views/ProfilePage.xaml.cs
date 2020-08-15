@@ -17,7 +17,14 @@ namespace TestXamarin.Views
         {
             BindingContext = viewModel = new ProfileViewModel();
             InitializeComponent();
+            this.Appearing += ProfilePage_Appearing;
         }
+
+        private void ProfilePage_Appearing(object sender, EventArgs e)
+        {
+            BindingContext = viewModel = new ProfileViewModel();
+        }
+
         //TODO
         //Создать ReportDitailPage, где будет отображаться полностью вся информация о репорте
         async void Setting_Clicked(object sender, EventArgs e)

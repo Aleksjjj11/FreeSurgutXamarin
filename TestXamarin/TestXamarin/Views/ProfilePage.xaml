@@ -14,7 +14,7 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Clicked="Setting_Clicked"  IconImageSource="settings_btn.png"/>
     </ContentPage.ToolbarItems>
-    <ContentPage.Content>
+    <RefreshView IsRefreshing="{Binding IsBusy, Mode=TwoWay}" Command="{Binding LoadItemsCommand}">
         <StackLayout>
             <Grid Margin="20, 5, 20, 0">
                 <Grid.RowDefinitions>
@@ -83,19 +83,19 @@
                            TextColor="Black"></Label>
                     </StackLayout>
                     <StackLayout Orientation="Horizontal">
-                        <Label Text="{Binding CountAccepted}" FontSize="Subtitle" FontFamily="Comfortaa-Regular.ttf#Comfortaa"
+                        <Label Text="{Binding TheUser.CountAccepted}" FontSize="Subtitle" FontFamily="Comfortaa-Regular.ttf#Comfortaa"
                            TextColor="#228B22"></Label>
                         <Label Text=" принято" FontSize="Subtitle" FontFamily="Comfortaa-Regular.ttf#Comfortaa"
                            TextColor="#228B22"></Label>
                     </StackLayout>
                     <StackLayout Orientation="Horizontal">
-                        <Label Text="{Binding CountDeclined}" FontSize="Subtitle" FontFamily="Comfortaa-Regular.ttf#Comfortaa"
+                        <Label Text="{Binding TheUser.CountDeclined}" FontSize="Subtitle" FontFamily="Comfortaa-Regular.ttf#Comfortaa"
                            TextColor="#B22222"></Label>
                         <Label Text=" отклонено" FontSize="16" FontFamily="Comfortaa-Regular.ttf#Comfortaa"
                            TextColor="#B22222"></Label>
                     </StackLayout>
                     <StackLayout Orientation="Horizontal">
-                        <Label Text="{Binding CountProcessing}" FontSize="Subtitle" FontFamily="Comfortaa-Regular.ttf#Comfortaa"
+                        <Label Text="{Binding TheUser.CountProcessing}" FontSize="Subtitle" FontFamily="Comfortaa-Regular.ttf#Comfortaa"
                            TextColor="#008B8B"></Label>
                         <Label Text=" обрабатывается" FontSize="Subtitle" FontFamily="Comfortaa-Regular.ttf#Comfortaa"
                            TextColor="#008B8B"></Label>
@@ -103,5 +103,5 @@
                 </StackLayout>
             </Grid>
         </StackLayout>
-    </ContentPage.Content>
+    </RefreshView>
 </ContentPage>
