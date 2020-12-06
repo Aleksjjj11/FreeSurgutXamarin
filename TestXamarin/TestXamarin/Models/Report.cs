@@ -7,6 +7,7 @@ using Xamarin.Forms;
 
 namespace TestXamarin.Models
 {
+    [Serializable]
     public class Report : Item
     {
         public enum ReportStatus
@@ -15,11 +16,14 @@ namespace TestXamarin.Models
             Declined,
             Processing
         }
-        public ObservableCollection<Image> ReportImages { get; set; }
+        public ObservableCollection<string> PathsReportImages { get; set; }
         public User Owner { get; }
         public ReportStatus Status { get; set; }
         public string NumberCar { get; set; }
-        public string Country { get; set; }
+        public string Country 
+        {
+            get; set;
+        }
         public string RegionCar { get; set; }
         public string CountryImage
         {
@@ -75,7 +79,7 @@ namespace TestXamarin.Models
         public Report()
         {
             CreatedDate = DateTime.Now;
-            ReportImages = ReportImages ?? new ObservableCollection<Image>();
+            PathsReportImages = PathsReportImages ?? new ObservableCollection<string>();
         }
     }
 }

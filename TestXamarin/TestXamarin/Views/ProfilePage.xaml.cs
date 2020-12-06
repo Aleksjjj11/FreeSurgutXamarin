@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FreeSurgut.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,11 +26,9 @@ namespace TestXamarin.Views
             BindingContext = viewModel = new ProfileViewModel();
         }
 
-        //TODO
-        //Создать ReportDitailPage, где будет отображаться полностью вся информация о репорте
         async void Setting_Clicked(object sender, EventArgs e)
         {
-            //await Navigation.PushModalAsync(new Report(new ReportPage()));
+            await Navigation.PushAsync(new RegistrationPage());
         }
     }
 }

@@ -6,6 +6,8 @@
              mc:Ignorable="d"
              x:Class="TestXamarin.Views.ItemsPage"
              xmlns:image="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             xmlns:viewModels="clr-namespace:TestXamarin.ViewModels;assembly=FreeSurgut"
+             
              Title="{Binding Title}"
              x:Name="BrowseItemsPage">
     <RefreshView 
@@ -28,7 +30,7 @@
                             Orientation="Horizontal"
                             Spacing="25">
                             <image:CircleImage 
-                                   Source="{Binding ReportImages[0].Source}" HorizontalOptions="Start"
+                                   Source="{Binding PathsReportImages[0]}" HorizontalOptions="Start"
                                    Aspect="AspectFill" HeightRequest="80" WidthRequest="80">
                             </image:CircleImage>
                             <StackLayout Orientation="Vertical">

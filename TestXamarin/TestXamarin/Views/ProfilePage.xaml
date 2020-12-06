@@ -34,7 +34,7 @@
                     <Label x:Name="Label1"  Grid.Row="0" FontSize="30" TextColor="Black"
                         FontFamily="Comfortaa-Regular.ttf#Comfortaa" Text="{Binding TheUser.UserName}">
                     </Label>
-                    <Label Grid.Row="1" Text="{Binding TheUser.Description}" FontSize="Subtitle" TextColor="Black"
+                    <Label Grid.Row="1" Text="{Binding TheUser.RealName}" FontSize="Subtitle" TextColor="Black"
                            FontFamily="Comfortaa-Regular.ttf#Comfortaa"></Label>
                 </StackLayout>
                 <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">

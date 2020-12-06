@@ -6,11 +6,15 @@ using System.Text;
 
 namespace TestXamarin.Models
 {
+    [Serializable]
     public class User : Item
     {
-        public string UserName { get; }
+        public string UserName { get; set; }
+        public string RealName { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
         public ObservableCollection<Report> Reports { get; set; }
-        public ObservableCollection<Achievement> Achievements { get; }
+        public ObservableCollection<Achievement> Achievements { get; set; }
         public int CountAccepted
         {
             get => Reports.Where(rep => rep.Status == Report.ReportStatus.Accepted).Count();
@@ -29,6 +33,11 @@ namespace TestXamarin.Models
             this.UserName = name;
             this.Description = status;
             this.Achievements = achievements;
+        }
+        public User()
+        {
+            Reports = new ObservableCollection<Report>();
+            Achievements = new ObservableCollection<Achievement>();
         }
     }
 }

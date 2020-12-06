@@ -21,13 +21,12 @@
                 <views:NewReportPage />
             </x:Arguments>
         </NavigationPage>
-        
+
         <NavigationPage Title="Профиль" BarTextColor="Black" IconImageSource="baseline_account_box_black_24dp.png">
             <x:Arguments>
                 <views:ProfilePage/>
             </x:Arguments>
         </NavigationPage>
-
     </TabbedPage.Children>
     
 </TabbedPage>

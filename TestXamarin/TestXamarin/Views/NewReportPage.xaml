@@ -14,7 +14,7 @@
                 <Entry 
                     Text="{Binding Report.NumberCar, Mode=TwoWay}" VerticalOptions="Center"
                     FontFamily="Comfortaa-Regular.ttf#Comfortaa" MaxLength="6"       
-                    Placeholder="A123BC" HorizontalOptions="Center" Completed="Entry_Completed"
+                    Placeholder="A123BC" HorizontalOptions="Center" TextChanged="Entry_Changed"
                     FontSize="Medium"  TextColor="Black"></Entry>
                 <BoxView 
                     VerticalOptions="Fill" BackgroundColor="Black" WidthRequest="2"
@@ -25,12 +25,12 @@
                         VerticalOptions="Center" Text="{Binding Report.RegionCar, Mode=TwoWay}" HorizontalOptions="Center"
                         FontSize="Medium" FontFamily="Comfortaa-Regular.ttf#Comfortaa" VerticalTextAlignment="End"
                         TextColor="Black" FontAttributes="Bold" MaxLength="3" Placeholder="186" Keyboard="Numeric"
-                        Completed="Entry_Completed"
+                        TextChanged="Entry_Changed"
                         ></Entry>
                     <Entry
                         Text="{Binding Report.Country, Mode=TwoWay}" VerticalOptions="Center"
                         FontSize="Medium" FontFamily="Comfortaa-Regular.ttf#Comfortaa" Placeholder="RUS"
-                        TextColor="Black" FontAttributes="Bold" Keyboard="Text" Completed="Entry_Completed"
+                        TextColor="Black" FontAttributes="Bold" Keyboard="Text" TextChanged="Entry_Changed"
                         ></Entry>
                 </StackLayout>
             </StackLayout>
@@ -43,8 +43,10 @@
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Image 
-                            Source="{Binding Source}"
-                            HorizontalOptions="Center" Margin="5, 15, 5, 10"></Image>
+                            HeightRequest="150"
+                            Source="{Binding .}"
+                            Aspect="AspectFill"
+                            HorizontalOptions="Center" Margin="10, 15, 10, 20"></Image>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>

@@ -44,11 +44,15 @@
                     FontSize="Subtitle"/>
                 <CollectionView
                     x:Name="ReportsImages" HeightRequest="600"
-                    ItemsSource="{Binding Item.ReportImages}">
+                    ItemsSource="{Binding Item.PathsReportImages}">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
                             <Image
-                                Source="{Binding Source}" HorizontalOptions="Center" Margin="5, 15, 5, 10">
+                                HeightRequest="180"
+                                Source="{Binding .}" 
+                                HorizontalOptions="Center" 
+                                Aspect="AspectFill"
+                                Margin="10, 0, 10, 20">
                             </Image>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>

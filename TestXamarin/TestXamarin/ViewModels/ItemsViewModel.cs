@@ -8,6 +8,7 @@ using Xamarin.Forms;
 using TestXamarin.Models;
 using TestXamarin.Views;
 
+
 namespace TestXamarin.ViewModels
 {
     public class ItemsViewModel : BaseViewModel
@@ -18,7 +19,7 @@ namespace TestXamarin.ViewModels
         public ItemsViewModel()
         {
             Title = "Журнал";
-            Items = new ObservableCollection<Report>((App.Current as App).TheUser.Reports);
+            Items = (App.Current as App).TheUser?.Reports is null ? new ObservableCollection<Report>() : (App.Current as App).TheUser?.Reports;
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 
            /* MessagingCenter.Subscribe<NewItemPage, Report>(this, "AddItem", async (obj, item) =>

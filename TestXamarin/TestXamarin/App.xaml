@@ -14,6 +14,18 @@
                 <Setter Property="BarBackgroundColor" Value="{StaticResource NavigationPrimary}" />
                 <Setter Property="BarTextColor" Value="Black" />
             </Style>
+            <Style TargetType="Entry" x:Key="EntryStyle">
+                <Setter Property="FontSize" Value="Title"></Setter>
+                <Setter Property="TextColor" Value="Black"></Setter>
+                <Setter Property="FontFamily" Value="&quot;Comfortaa-Regular.ttf#Comfortaa&quot;"></Setter>
+            </Style>
+            <Style x:Key="ButtonBlueStyle" TargetType="Button">
+                <Setter Property="Margin" Value="10"></Setter>
+                <Setter Property="FontSize" Value="Title"></Setter>
+                <Setter Property="TextColor" Value="White"></Setter>
+                <Setter Property="BackgroundColor" Value="DeepSkyBlue"></Setter>
+                <Setter Property="CornerRadius" Value="15"></Setter>
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
     

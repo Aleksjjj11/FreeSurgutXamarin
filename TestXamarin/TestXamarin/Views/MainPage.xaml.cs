@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using FreeSurgut.Views;
+using System.ComponentModel;
 using Xamarin.Forms;
 
 namespace TestXamarin.Views
@@ -8,11 +9,12 @@ namespace TestXamarin.Views
     [DesignTimeVisible(false)]
     public partial class MainPage : TabbedPage
     {
-        Button takePhoto;
-
         public MainPage()
         {
             InitializeComponent();
+            //if ((App.Current as App).TheUser.UserName == "" || (App.Current as App).TheUser.Email == "" || (App.Current as App).TheUser.Password == "")
+            //{
+            //}
         }
     }
 }

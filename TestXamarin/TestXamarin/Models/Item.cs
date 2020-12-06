@@ -3,6 +3,7 @@ using Xamarin.Forms;
 
 namespace TestXamarin.Models
 {
+    [Serializable]
     public class Item : IItem
     {
         public string Id { get; set; }
