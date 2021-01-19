@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.Globalization;
+using FreeSurgutBackend.Interfaces;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using Xamarin.Forms;
 
 namespace FreeSurgutBackend.Models
 {
-    public class Report
+    public class Report : IReport
     {
-        public Report(User owner)
+        public Report(IUser owner)
         {
             Owner = owner;
         }
@@ -17,20 +18,11 @@ namespace FreeSurgutBackend.Models
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; }
-        public enum ReportStatus
-        {
-            Accepted,
-            Declined,
-            Processing
-        }
         public ObservableCollection<string> PathsReportImages { get; set; }
-        public User Owner { get; }
+        public IUser Owner { get; }
         public ReportStatus Status { get; set; }
         public string NumberCar { get; set; }
-        public string Country
-        {
-            get; set;
-        }
+        public string Country { get; set; }
         public string RegionCar { get; set; }
         public string CountryImage
         {
